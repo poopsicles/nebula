@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Object-Oriented Programming - Nebula: The Definitive Pygame Course</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with Python</li><li class="chapter-item expanded "><a href="../Python/Variables.html"><strong aria-hidden="true">2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../Python/Strings.html"><strong aria-hidden="true">3.</strong> Strings</a></li><li class="chapter-item expanded "><a href="../Python/Functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../Python/Logic.html"><strong aria-hidden="true">5.</strong> Logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/Conditionals.html"><strong aria-hidden="true">5.1.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="../Python/Loops.html"><strong aria-hidden="true">5.2.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../Python/Lists-I.html"><strong aria-hidden="true">5.3.</strong> Accessing Lists</a></li><li class="chapter-item expanded "><a href="../Python/Lists-II.html"><strong aria-hidden="true">5.4.</strong> List Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Dictionaries.html"><strong aria-hidden="true">6.</strong> Dictionaries</a></li><li class="chapter-item expanded "><a href="../Python/OOP.html" class="active"><strong aria-hidden="true">7.</strong> Object-Oriented Programming</a></li><li class="chapter-item expanded affix "><li class="part-title">Working with Pygame</li><li class="chapter-item expanded "><a href="../Pygame/Pygame-I.html"><strong aria-hidden="true">8.</strong> Introduction to Pygame</a></li><li class="chapter-item expanded "><a href="../Pygame/Pygame-II.html"><strong aria-hidden="true">9.</strong> Doing more with Pygame</a></li><li class="chapter-item expanded affix "><li class="part-title">Real-World Examples</li><li class="chapter-item expanded "><a href="../Pong/Intro.html"><strong aria-hidden="true">10.</strong> Pong</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pong/Player.html"><strong aria-hidden="true">10.1.</strong> The Player Class</a></li><li class="chapter-item expanded "><a href="../Pong/Ball.html"><strong aria-hidden="true">10.2.</strong> The Ball Class</a></li><li class="chapter-item expanded "><a href="../Pong/Score.html"><strong aria-hidden="true">10.3.</strong> Showing Information</a></li><li class="chapter-item expanded "><a href="../Pong/Loop.html"><strong aria-hidden="true">10.4.</strong> Putting it all together</a></li><li class="chapter-item expanded "><a href="../Pong/Final.html"><strong aria-hidden="true">10.5.</strong> Final Code</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Space Invaders</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nebula: The Definitive Pygame Course</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="modules-classes--objects"><a class="header" href="#modules-classes--objects">Modules, Classes &amp; Objects</a></h1>
+<p>Python is something called an “object-oriented programming language.”
+This means that there’s a construct in Python called a “class” that lets you structure your software in a particular way. Using classes, you can add consistency to your programs so that they can be used in a cleaner way.</p>
+<p>Let’s try to learn the beginnings of object-oriented programming, classes, and objects using what you already know about dictionaries and modules.</p>
+<h2 id="modules-are-like-dictionaries"><a class="header" href="#modules-are-like-dictionaries">Modules are like dictionaries</a></h2>
+<p>A dictionary is created and used to map one thing to another. That means if you have a dictionary with a key “apple” and you want to get it, then you do this:</p>
+<pre><code class="language-Python">mystuff = {'apple': &quot;I AM APPLES!&quot;} 
+
+print(mystuff['apple'])
+</code></pre>
+<p>A module is simply used to group related functions together in a separate Python file.
+Imagine if I have a module that I decide to name <code>mystuff.py</code>, and I put a function in it called <code>apple()</code>. </p>
+<pre><code class="language-Python"># this goes in mystuff.py    
+def apple():        
+     print (&quot;I AM APPLES!&quot;)
+</code></pre>
+<p>Once I have that, I can use that module with the <code>import</code> statement and then access the <code>apple()</code> function elsewhere:</p>
+<pre><code class="language-Python"># this is in main.py 
+import mystuff # allowing us to access everything in mystuff
+
+mystuff.apple()
+</code></pre>
+<p>I could also put a variable in it named <code>tangerine</code>, like this:</p>
+<pre><code class="language-Python"># mystuff.py
+def apple():
+    print &quot;I AM APPLES!&quot;    
+
+tangerine = &quot;Living reflection of a dream&quot;
+</code></pre>
+<p>Then again I can access that the same way:</p>
+<pre><code class="language-Python"># main.py
+import mystuff 
+
+mystuff.apple()    
+print(mystuff.tangerine)
+</code></pre>
+<p>You should start to see how this is similar to using a dictionary, but the syntax is slightly different. Let’s compare:</p>
+<pre><code class="language-Python">mystuff['apple'] # get apple from dict   
+mystuff.apple() # get apple from the module  
+mystuff.tangerine # same thing, it's just a variable
+</code></pre>
+<p>This means we have a very common pattern in Python: </p>
+<ol>
+<li>Take a key-value style container. </li>
+<li>Get something out of it by the key’s name - be it a string, number, or even a function in another module.</li>
+</ol>
+<h2 id="classes-are-like-modules"><a class="header" href="#classes-are-like-modules">Classes Are Like Modules</a></h2>
+<p>A way to think about a module is that it is a specialized dictionary that can store Python code so you can get to it with the “<code>.</code>” (dot) operator. Python also has another construct that serves a similar purpose called a class. </p>
+<p>A class is a way to take a grouping of functions and data and place them inside a container so you can access them with the “<code>.</code>” operator.</p>
+<p>If I were to create a class just like the <code>mystuff</code> module, I’d do something like this:</p>
+<pre><code class="language-Python">class MyStuff(object):
+	def __init__(self):
+		 self.tangerine = &quot;And now a thousand years between&quot;
+	def apple(self):
+		 print(&quot;I AM CLASSY APPLES!&quot;)
+</code></pre>
+<p>This looks complicated compared to modules, and there is definitely a lot going on by comparison, but you should be able to make out how this is like a “mini-module” with <code>MyStuff</code> having an <code>apple()</code> function in it. What is probably confusing with this is the <code>__init__()</code> function (a function which is called when the class is “instantiated”) and use of <code>self.tangerine</code> for setting the <code>tangerine</code> variable associated with the class.</p>
+<p>Now, you need to know what an “object” is and how to work with <code>MyStuff</code> just like you do with the <code>mystuff.py</code> module.</p>
+<h2 id="objects-are-like-mini-imports"><a class="header" href="#objects-are-like-mini-imports">Objects are like mini-imports</a></h2>
+<p>If a class is like a “mini-module”, then there has to be a similar concept to <code>import</code> but for classes. 
+That concept is called “instantiatiation,” which is just a fancy, obnoxious, overtly-smart way to say “create.” When you instantiate a class, what you get is called an object.</p>
+<p>The way you do this is you call the class like it’s a function, like this:</p>
+<pre><code class="language-Python">thing = MyStuff()   
+
+thing.apple()    
+print(thing.tangerine)
+</code></pre>
+<p>The first line is the “instantiate” operation, where it “creates” the object from the class and it’s a lot like calling a function. However, when you call this, there’s a sequence of events that Python coordinates for you. I’ll go through them using the above code for <code>MyStuff</code>:</p>
+<ol>
+<li>Python looks for MyStuff() and sees that it is a class you’ve defined.</li>
+<li>Python crafts an empty object with all the functions you’ve specified in the class using <code>def</code>.</li>
+<li>Python then looks to see if you made a “magic” <code>__init__()</code> function, and if you have, it calls that function to initialize your newly-created empty object.</li>
+<li>In the MyStuff function <code>__init__()</code> I then get this extra variable <code>self</code>, which is that empty object Python made for me, and I can set variables on it just like you would with a module, dictionary, or other object.</li>
+<li>In this case, I set <code>self.tangerine</code> to a song lyric string and then this object has been initialized.</li>
+<li>Now Python can take this newly-minted object and assign it to the <code>thing</code> variable for me to work with.</li>
+</ol>
+<p>Those are the basics of how Python does this “mini-import” when you call a class like a function to make an object. Remember that this is not giving you the class, but instead it is using the class as a blueprint for how to build a copy of that type of thing - an object.</p>
+<p>Although these analogies are slightly-inaccurate, you can start to build up an understanding of classes based on what you know already. In reality, classes and objects diverge from modules at this point. It’s something more like this:</p>
+<blockquote>
+<p>Classes are like blueprints or definitions for creating new mini-modules.<br>
+Instantiation is how you create one of these mini-modules and import it at the same time.<br>
+The resulting created mini-module is called an object and you then assign it to a variable to work with it.</p>
+</blockquote>
+<p>Here’s an example:</p>
+<pre><code class="language-Python">class Song(object):
+	def __init__(self, lyrics):
+		self.lyrics = lyrics
+		
+	def sing_me_a_song(self):
+		for line in self.lyrics:
+			print line
+			
+happy_bday = Song([&quot;Happy birthday to you&quot;,
+				  &quot;I don't want to get sued&quot;,
+				  &quot;So I'll stop right there&quot;])
+
+bulls_on_parade = Song([&quot;They rally around the family&quot;,
+					   &quot;With pockets full of shells&quot;])
+					   
+happy_bday.sing_me_a_song()
+bulls_on_parade.sing_me_a_song()
+</code></pre>
+<p>Try finding out more about OOP, and practising on your own.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Python/Dictionaries.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Pygame/Pygame-I.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Python/Dictionaries.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Pygame/Pygame-I.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

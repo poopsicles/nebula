@@ -1,0 +1,504 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Final Code - Nebula: The Definitive Pygame Course</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with Python</li><li class="chapter-item expanded "><a href="../Python/Variables.html"><strong aria-hidden="true">2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../Python/Strings.html"><strong aria-hidden="true">3.</strong> Strings</a></li><li class="chapter-item expanded "><a href="../Python/Functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../Python/Logic.html"><strong aria-hidden="true">5.</strong> Logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/Conditionals.html"><strong aria-hidden="true">5.1.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="../Python/Loops.html"><strong aria-hidden="true">5.2.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../Python/Lists-I.html"><strong aria-hidden="true">5.3.</strong> Accessing Lists</a></li><li class="chapter-item expanded "><a href="../Python/Lists-II.html"><strong aria-hidden="true">5.4.</strong> List Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Dictionaries.html"><strong aria-hidden="true">6.</strong> Dictionaries</a></li><li class="chapter-item expanded "><a href="../Python/OOP.html"><strong aria-hidden="true">7.</strong> Object-Oriented Programming</a></li><li class="chapter-item expanded affix "><li class="part-title">Working with Pygame</li><li class="chapter-item expanded "><a href="../Pygame/Pygame-I.html"><strong aria-hidden="true">8.</strong> Introduction to Pygame</a></li><li class="chapter-item expanded "><a href="../Pygame/Pygame-II.html"><strong aria-hidden="true">9.</strong> Doing more with Pygame</a></li><li class="chapter-item expanded affix "><li class="part-title">Real-World Examples</li><li class="chapter-item expanded "><a href="../Pong/Intro.html"><strong aria-hidden="true">10.</strong> Pong</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pong/Player.html"><strong aria-hidden="true">10.1.</strong> The Player Class</a></li><li class="chapter-item expanded "><a href="../Pong/Ball.html"><strong aria-hidden="true">10.2.</strong> The Ball Class</a></li><li class="chapter-item expanded "><a href="../Pong/Score.html"><strong aria-hidden="true">10.3.</strong> Showing Information</a></li><li class="chapter-item expanded "><a href="../Pong/Loop.html"><strong aria-hidden="true">10.4.</strong> Putting it all together</a></li><li class="chapter-item expanded "><a href="../Pong/Final.html" class="active"><strong aria-hidden="true">10.5.</strong> Final Code</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Space Invaders</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nebula: The Definitive Pygame Course</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="final-code"><a class="header" href="#final-code">Final Code</a></h1>
+<p>Here is <strong>PONG</strong> in all its full glory</p>
+<pre><code class="language-python">from math import *
+import pygame
+import sys
+import random
+
+
+# ? This is the Player Object
+class Player:
+    def __init__(self, x: int) -&gt; None:
+        # ? We set the x and y position of the player. The value of the y position is at the center of the screen by default
+        self.x = x
+        self.h = screen_height*0.4
+        self.y = (screen_height - self.h) / 2
+        self.w = 20
+
+        # ? This is the rectangle object of the player class
+        self.rect = pygame.rect.Rect(self.x, self.y, self.w, self.h)
+
+        # ? This is how fast the paddles move every frame
+        self.move_speed = 15
+
+        # ? This is a variable to basically tell if the paddle is moving
+        # ? We do this because pygame doesn't have a built in key held down event type
+        # ? Further explanation in the event loop
+        self.moving = False
+        self.moving_up = False
+
+
+    # ? This is the update function that gets called every frame
+    def update(self):
+        # ? We check if we are moving first and then change the y position of the paddle's rectangle accordingly
+        if self.moving:
+            if self.moving_up:
+                # ? We check if we have reached the top of the screen and then stop changing the y postion of the paddle's rectangle
+                if self.rect.y &gt; 0:
+                    self.rect.y -= self.move_speed
+                else:
+                    self.rect.y = 0
+            else:
+                # ? We check if we have reached the bottom of the screen and then stop changing the y postion of the paddle's rectangle
+                if self.rect.y &lt; screen_height - self.h:
+                    self.rect.y += self.move_speed
+                else:
+                    self.rect.y = screen_height - self.h
+
+    # ? This just resets the paddle's location
+    def reset(self):
+        self.rect.y = (screen_height - self.h)/2
+        self.moving = False
+
+    # ? This shows the draws the paddle's rectangle object to the screen
+    def show(self):
+        pygame.draw.rect(display, foreground_color, self.rect)
+
+
+# ? This is the ball object
+class Ball:
+    def __init__(self):
+        # ? This is the size of the ball
+        self.size = 20
+
+        # ? This calculates the center position of the screen
+        center_horizontal = (screen_width - self.size) / 2
+        center_vertical = (screen_height - self.size) / 2
+
+        # ? This is pygame rectangle object that gets drawn onto the screen
+        self.rect = pygame.Rect(
+            center_horizontal, center_vertical, self.size, self.size)
+
+        # ? This chooses a random angle for velocity vector
+        self.angle = random.choice(possible_angles)
+
+        # ? This is the x component of the velocity vector
+        self.x_component = cos(radians(self.angle))
+
+        # ? This is the y component of the velocity vector
+        self.y_component = sin(radians(self.angle))
+
+        # ? This is the speed of the ball
+        self.speed = 15
+
+        # ? This is a variable that fixes a bug
+        # ? Check the check_collisions method for more
+        self.should_check = True
+
+    def reset(self, left_paddle: Player, right_paddle: Player):
+		self.angle = random.choice(possible_angles)
+
+        # ? This just resets the ball and the paddles position and recalculates the x and y components of the velocity vector
+        self.rect.x = (screen_width - self.size) / 2
+        self.rect.y = (screen_height - self.size) / 2
+        self.x_component = cos(radians(self.angle))
+        self.y_component = sin(radians(self.angle))
+        left_paddle.reset()
+        right_paddle.reset()
+
+    # ? This is kinda like a mini physics enginej
+    def check_collisions(self, left_paddle: Player, right_paddle: Player):
+
+        # ? We tell the interpreter that we are about to modify some global variables
+        global left_score, right_score, wait_timer
+
+        # ? Checking if the ball collides with the top part or the bottom part of the screen
+        if self.rect.y &lt;= 0 or self.rect.y + self.rect.h &gt;= screen_height:
+            # ? We just flip the value of the y component
+            # ? So for example, if it was moving down it will then start moving up and vice versa
+            self.y_component *= -1
+
+        # ? Checking if the ball collides with the left paddle
+        if self.rect.colliderect(left_paddle.rect) or self.rect.colliderect(right_paddle.rect):
+            # ? So what does this should check variable do
+            # ? This is just variable that just specifies if the ball collided with a paddle
+            # ? We do this because we want to check the collisions once
+            # ? Since when the ball collides with a paddle the x component is reversed
+            # ? We only want to reverse the component once
+            # ? So why? I bet that's what you are thinking
+            # ? When we add the x component to ball's x position we could be inside a paddle
+            # ? If we then just flip the vector when it has collided we could flip it multiple times
+            # ? Since the should check variable is true by default the flip should only do once and then it should then set it to not check
+            # ? Then we are not colliding a paddle anymore we then set the variable to true so when it collides with another paddle it flips the component once
+            # ? And then rinse and repeat
+            if self.should_check:
+                self.x_component *= -1
+                self.should_check = False
+        else:
+            self.should_check = True
+
+        # ? Checking if the left side of the ball has touched the left side of the screen
+        if self.rect.x &lt;= 0 and not self.rect.colliderect(left_paddle.rect):
+
+            # ? This increments the score for player 1
+            right_score += 1
+
+            # ? This resets the entire game
+            self.reset(left_paddle, right_paddle)
+
+            # ? waits for a 2 seconds before it resumes gameplay
+            wait_timer = 120
+
+        # ? Checking if the right side of the ball has touched the right side of the screen
+        if self.rect.x + self.rect.w &gt;= screen_width and not self.rect.colliderect(right_paddle.rect):
+            # ? This increments the score for player 2
+            left_score += 1
+            self.reset(left_paddle, right_paddle)
+            # ? waits for a 2 seconds before it resumes gameplay
+            wait_timer = 120
+
+    # ? This method runs every frame
+    def update(self):
+        # ? Adding the x and y components to the x and y position of the ball's rectangle object
+        # ? We multiply the vector by a mangitude in order to make the ball move faster
+        self.rect.x += self.x_component * self.speed
+        self.rect.y += self.y_component * self.speed
+
+    def show(self):
+        # ? This just draws the ball's rectangle to the screen
+        pygame.draw.rect(display, foreground_color, self.rect)
+
+
+# ? These are the possible angles that the ball could be shot in
+# ? The first 3 angles will shoot the ball to the right side of the screen
+# ? The last 3 angles will shoot the ball to left side of the screen
+possible_angles = [15, 45, 60, 120, 150, 135]
+
+# ? This defines the screen size and set's the window to that size
+screen_size = (screen_width, screen_height) = (1000, 400)
+display = pygame.display.set_mode(screen_size)
+
+# ? Definitions for some nice colors for our game :)
+# ? I used hexadecimal to define the colors but you can use rgb
+# ? You can just google hexadecimal color for more info
+background_color = pygame.Color(&quot;#1b1b1e&quot;)
+foreground_color = pygame.Color(&quot;#F2F3D9&quot;)
+
+# ? We define the clock and then set the title of the window to &quot;Pong&quot;
+clock = pygame.time.Clock()
+pygame.display.set_caption(&quot;Pong&quot;)
+
+#? We initalize pygame
+pygame.init()
+
+# ? Definition of some variables that will be used throughout the game
+left_score = 0
+right_score = 0
+FRAMERATE = 60
+wait_timer = 0
+running = True
+
+# ? We define a font object for showing the score and define the font size
+font_size = screen_height * 0.1
+font = pygame.font.SysFont(None, int(font_size))
+
+# ? This creates the two paddles and ball object
+left_paddle = Player(-10)
+right_paddle = Player(screen_width-10)
+ball = Ball()
+
+
+# ? This function show the score to the screen
+def show_score():
+    # ? We define the left text object
+    # ? We convert the left score to a string and display with a nice white color
+    left_text = font.render(str(left_score), True, foreground_color)
+    # ? This set the location of the text to be slightly to the left of the center of the screen
+    left_text_location = ((screen_width / 2) - (font_size * 2), 20)
+    # ? We draw the text to the display at the location calculated
+    display.blit(left_text, left_text_location)
+    # ? We define the right text object
+    # ? We convert the right score to a string and display with a nice white color
+    right_text = font.render(str(right_score), True, foreground_color)
+    # ? This set the location of the text to be slightly to the right of the center of the screen
+    right_text_location = ((screen_width / 2) + (font_size * 2), 20)
+    # ? We draw the text to the display at the location calculated
+    display.blit(right_text, right_text_location)
+
+
+
+# ? This is basically the event loop
+# ? The order by which things are put things here matter a lot
+# ? For the event loop we perform the following things
+# ? -&gt; Check the quit event and for any keyboard events
+# ? -&gt; Draw the background color
+# ? -&gt; Draw the paddles and the ball
+# ? -&gt; Draw the left and right score of the players
+# ? -&gt; Update the ball's position and the paddle's position
+# ? -&gt; Then we check for collisions between the ball, the screen and any of the paddles
+# ? And then we repeat forever and ever
+while running:
+    # ? We first get all the events that pygame is giving us
+    for e in pygame.event.get():
+        # ? We checked if the player wants to quit the game
+        if e.type == pygame.QUIT:
+            # ? This breaks out the event loop and then quits the game
+            running = False
+            pygame.quit()
+            sys.exit()
+
+        # ? This is where we do all of our input stuff for the game
+        # ? This checks if the player has pressed a key down
+        elif e.type == pygame.KEYDOWN:
+
+            # ? We check if we pressed the w key and say that the left paddle is moving up
+            if e.key == pygame.K_w:
+                left_paddle.moving = True
+                left_paddle.moving_up = True
+            # ? We check if we pressed the up key and say that the right paddle is moving up
+            elif e.key == pygame.K_UP:
+                right_paddle.moving = True
+                right_paddle.moving_up = True
+            # ? We check if we pressed the s key and say that the left paddle is moving down
+            elif e.key == pygame.K_s:
+                left_paddle.moving = True
+                left_paddle.moving_up = False
+            # ? We check if we pressed the down key and say that the right paddle is moving down
+            elif e.key == pygame.K_DOWN:
+                right_paddle.moving = True
+                right_paddle.moving_up = False
+        # ? This checks if the player has stopped pressing the any keys
+        elif e.type == pygame.KEYUP:
+            # ? We stop moving the left paddle when we release the w key
+            if e.key == pygame.K_w:
+                left_paddle.moving = False
+            # ? We stop moving the right paddle when we release the up key
+            elif e.key == pygame.K_UP:
+                right_paddle.moving = False
+            # ? We stop moving the left paddle when we release the s key
+            elif e.key == pygame.K_s:
+                left_paddle.moving = False
+            # ? We stop moving the right paddle when we release the down key
+            elif e.key == pygame.K_DOWN:
+                right_paddle.moving = False
+
+    # ? We fill the display with black background color
+    display.fill(background_color)
+    # ? We then show the ball and the paddles
+    ball.show()
+    left_paddle.show()
+    right_paddle.show()
+    show_score()
+
+    # ? Ah! The wait timer
+    # ? This is a variable that we created when we defining some stuffs
+    # ? This basically pauses the game for some time
+    # ? We achieve this by not update the two paddles location and the ball locations and also by not checking collisions
+    if wait_timer == 0:
+        left_paddle.update()
+        right_paddle.update()
+        ball.check_collisions(left_paddle, right_paddle)
+        ball.update()
+
+    # ? If the timer is not zero it doesn't do anything at all
+    else:
+        # ? Then we count the decrement the timer by 1 every frame
+        wait_timer -= 1
+
+    # ? This updates the display to then show the ball and the paddles
+    pygame.display.update()
+
+    # ? This makes sure that the event loop runs at the specified frame rate
+    clock.tick(FRAMERATE)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Pong/Loop.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Pong/Loop.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

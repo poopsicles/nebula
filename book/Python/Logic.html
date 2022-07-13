@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Logic - Nebula: The Definitive Pygame Course</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with Python</li><li class="chapter-item expanded "><a href="../Python/Variables.html"><strong aria-hidden="true">2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../Python/Strings.html"><strong aria-hidden="true">3.</strong> Strings</a></li><li class="chapter-item expanded "><a href="../Python/Functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../Python/Logic.html" class="active"><strong aria-hidden="true">5.</strong> Logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/Conditionals.html"><strong aria-hidden="true">5.1.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="../Python/Loops.html"><strong aria-hidden="true">5.2.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../Python/Lists-I.html"><strong aria-hidden="true">5.3.</strong> Accessing Lists</a></li><li class="chapter-item expanded "><a href="../Python/Lists-II.html"><strong aria-hidden="true">5.4.</strong> List Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Dictionaries.html"><strong aria-hidden="true">6.</strong> Dictionaries</a></li><li class="chapter-item expanded "><a href="../Python/OOP.html"><strong aria-hidden="true">7.</strong> Object-Oriented Programming</a></li><li class="chapter-item expanded affix "><li class="part-title">Working with Pygame</li><li class="chapter-item expanded "><a href="../Pygame/Pygame-I.html"><strong aria-hidden="true">8.</strong> Introduction to Pygame</a></li><li class="chapter-item expanded "><a href="../Pygame/Pygame-II.html"><strong aria-hidden="true">9.</strong> Doing more with Pygame</a></li><li class="chapter-item expanded affix "><li class="part-title">Real-World Examples</li><li class="chapter-item expanded "><a href="../Pong/Intro.html"><strong aria-hidden="true">10.</strong> Pong</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pong/Player.html"><strong aria-hidden="true">10.1.</strong> The Player Class</a></li><li class="chapter-item expanded "><a href="../Pong/Ball.html"><strong aria-hidden="true">10.2.</strong> The Ball Class</a></li><li class="chapter-item expanded "><a href="../Pong/Score.html"><strong aria-hidden="true">10.3.</strong> Showing Information</a></li><li class="chapter-item expanded "><a href="../Pong/Loop.html"><strong aria-hidden="true">10.4.</strong> Putting it all together</a></li><li class="chapter-item expanded "><a href="../Pong/Final.html"><strong aria-hidden="true">10.5.</strong> Final Code</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Space Invaders</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nebula: The Definitive Pygame Course</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="working-with-logic"><a class="header" href="#working-with-logic">Working with logic</a></h1>
+<h2 id="logical-statements"><a class="header" href="#logical-statements">Logical statements</a></h2>
+<p>Up to this point, you have done everything you possibly can - reading and writing text, and have learned quite a lot of the math capabilities of Python.</p>
+<p>From now on, you will be learning logic. You won’t learn complex theories that academics love to study but just the simple basic logic that makes real programs work and that real programmers need every day.</p>
+<p>Learning logic has to come after you do some memorization. I want you to do this exercise for an entire week. Even if you are bored out of your mind, keep doing it. This exercise has a set of logic tables you must memorize to make it easier for you to do the later exercises.</p>
+<p>At first, this won’t be fun. It will be downright boring and tedious, but this is to teach you a very important skill you will need as a programmer. You will need to be able to memorize important concepts in your life. Most of these concepts will be exciting once you get them. You will struggle with them, like wrestling a squid, then one day, *snap** you will understand it. All that work memorizing the basics pays off later.</p>
+<blockquote>
+<p>Here’s a tip on how to memorize something without going insane:
+Do a tiny bit at a time throughout the day and mark down what you need to work on most. </p>
+</blockquote>
+<p>Do not try to sit down for two hours straight and memorize these tables. This won’t work. Your brain will really only retain whatever you studied in the first 15 or 30 minutes anyway. Instead, what you should do is create a bunch of index cards with each column on the left on one side (True or False) and the column on the right on the back. You should then pull them out, see the “True or False,” and be able to immediately say “True!”.</p>
+<p>Keep practicing until you can do this.</p>
+<p>Once you can do that, start writing out your own truth tables each night into a notebook. Do not just copy them. Try to do them from memory, and when you get stuck, glance quickly at the ones I have here to refresh your memory. Doing this will train your brain to remember the whole table.</p>
+<p>Try not to spend more than one week on this, because you will be applying it as you go.
+<br></p>
+<h2 id="the-truth-terms"><a class="header" href="#the-truth-terms">The Truth Terms</a></h2>
+<p>In Python (and computing, in general) we have the following terms for determining if something is “True” or “False.” Logic on a computer is all about seeing if some combination of these characters and some variables is True at that point in the program.</p>
+<blockquote>
+<p>and</p>
+</blockquote>
+<blockquote>
+<p>or</p>
+</blockquote>
+<blockquote>
+<p>not</p>
+</blockquote>
+<blockquote>
+<p>!= (not equal)</p>
+</blockquote>
+<blockquote>
+<p>== (equals)</p>
+</blockquote>
+<blockquote>
+<p>&gt;= (greater-than-or-equals)</p>
+</blockquote>
+<blockquote>
+<p>&lt;= (less-than-or-equals)</p>
+</blockquote>
+<blockquote>
+<p>True</p>
+</blockquote>
+<blockquote>
+<p>False</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Python/Functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Python/Conditionals.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Python/Functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Python/Conditionals.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

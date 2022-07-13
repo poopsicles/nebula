@@ -1,0 +1,12 @@
+[book]
+authors = ["poopsicles"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Nebula: The Definitive Pygame Course"
+
+[output.html]
+curly-quotes = true
+
+[output.html.print]
+enable = false
