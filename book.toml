@@ -7,6 +7,7 @@ title = "Nebula: The Definitive Pygame Course"
 
 [output.html]
 curly-quotes = true
+preferred-dark-theme = "coal"
 
 [output.html.print]
 enable = false
