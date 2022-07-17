@@ -26,4 +26,10 @@
 	- [Putting it all together](Pong\Loop.md)
 	- [Final Code](Pong\Final.md)
 
-- [Space Invaders]()
+- [Space Invaders](Space\Intro.md)
+	- [Implementing the Player](Space\Player.md)
+	- [Adding Enemies](Space\Enemies.md)
+	- [Bullets and Shooting](Space\Bullets.md)
+	- [Adding Scoring](Space\Scoring.md)
+	- [Adding More Enemies](Space\More.md)
+	- [Finishing Touches](Space\Finish.md)
