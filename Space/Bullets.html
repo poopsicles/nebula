@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bullets and Shooting - Nebula: The Definitive Pygame Course</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with Python</li><li class="chapter-item expanded "><a href="../Python/Variables.html"><strong aria-hidden="true">2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../Python/Strings.html"><strong aria-hidden="true">3.</strong> Strings</a></li><li class="chapter-item expanded "><a href="../Python/Functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../Python/Logic.html"><strong aria-hidden="true">5.</strong> Logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/Conditionals.html"><strong aria-hidden="true">5.1.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="../Python/Loops.html"><strong aria-hidden="true">5.2.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../Python/Lists-I.html"><strong aria-hidden="true">5.3.</strong> Accessing Lists</a></li><li class="chapter-item expanded "><a href="../Python/Lists-II.html"><strong aria-hidden="true">5.4.</strong> List Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Dictionaries.html"><strong aria-hidden="true">6.</strong> Dictionaries</a></li><li class="chapter-item expanded "><a href="../Python/OOP.html"><strong aria-hidden="true">7.</strong> Object-Oriented Programming</a></li><li class="chapter-item expanded affix "><li class="part-title">Working with Pygame</li><li class="chapter-item expanded "><a href="../Pygame/Pygame-I.html"><strong aria-hidden="true">8.</strong> Introduction to Pygame</a></li><li class="chapter-item expanded "><a href="../Pygame/Pygame-II.html"><strong aria-hidden="true">9.</strong> Doing more with Pygame</a></li><li class="chapter-item expanded affix "><li class="part-title">Real-World Examples</li><li class="chapter-item expanded "><a href="../Pong/Intro.html"><strong aria-hidden="true">10.</strong> Pong</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pong/Player.html"><strong aria-hidden="true">10.1.</strong> The Player Class</a></li><li class="chapter-item expanded "><a href="../Pong/Ball.html"><strong aria-hidden="true">10.2.</strong> The Ball Class</a></li><li class="chapter-item expanded "><a href="../Pong/Score.html"><strong aria-hidden="true">10.3.</strong> Showing Information</a></li><li class="chapter-item expanded "><a href="../Pong/Loop.html"><strong aria-hidden="true">10.4.</strong> Putting it all together</a></li><li class="chapter-item expanded "><a href="../Pong/Final.html"><strong aria-hidden="true">10.5.</strong> Final Code</a></li></ol></li><li class="chapter-item expanded "><a href="../Space/Intro.html"><strong aria-hidden="true">11.</strong> Space Invaders</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Space/Player.html"><strong aria-hidden="true">11.1.</strong> Implementing the Player</a></li><li class="chapter-item expanded "><a href="../Space/Enemies.html"><strong aria-hidden="true">11.2.</strong> Adding Enemies</a></li><li class="chapter-item expanded "><a href="../Space/Bullets.html" class="active"><strong aria-hidden="true">11.3.</strong> Bullets and Shooting</a></li><li class="chapter-item expanded "><a href="../Space/Scoring.html"><strong aria-hidden="true">11.4.</strong> Adding Scoring</a></li><li class="chapter-item expanded "><a href="../Space/More.html"><strong aria-hidden="true">11.5.</strong> Adding More Enemies</a></li><li class="chapter-item expanded "><a href="../Space/Finish.html"><strong aria-hidden="true">11.6.</strong> Finishing Touches</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nebula: The Definitive Pygame Course</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="bullets-and-shooting"><a class="header" href="#bullets-and-shooting">Bullets And Shooting</a></h1>
+<h3 id="creating-the-bullet"><a class="header" href="#creating-the-bullet">Creating The Bullet</a></h3>
+<p>We create the bullet image the same way we created the player and the enemy images, using the <code>pygame.image.load()</code> function to load the image to the code and the <code>screen.blit()</code> function to draw the image to the screen. Remember to use the filename of the bullet image in the <code>.image.load()</code> function.</p>
+<p>For the position, we would also declare the variables of both the x and y co-ordinates</p>
+<pre><code class="language-python">bulletimg = pygame.image.load(&quot;bullet.png&quot;)
+#...
+bulletX=386
+bulletY=489
+#....
+screen.blit(bulletimg, (bulletX, bulletY))
+</code></pre>
+<p>We’re using the bullet position 386 and 489 to make the bullet seem like it’s coming from the player or the ship.</p>
+<h3 id="shooting-the-bullet"><a class="header" href="#shooting-the-bullet">Shooting The Bullet</a></h3>
+<p>To shoot the bullet, we first need to show the bullet only if a particular key is pressed, the spacebar. To do that, the <code>.blit()</code> method would be called within the if-statement for the space bar. To prevent that, there are two methods, we can move the bullet blit method to be inside of the if-statement for the space-bar key. Let’s try that, inside the if-statement for the key down, type the following:</p>
+<pre><code class="language-python">if event.key == pygame.K_SPACE:
+	screen.blit(bulletimg, (bulletX, bulletY))
+</code></pre>
+<p>When we add this to the code and run, it doesn’t work too well and the bullet image doesn’t stay, but it flickers. To fix this, we use the second method.</p>
+<p>We create a boolean to check if the bullet has already been drawn, if it’s not, we draw it. That way, we can call screen.blit() for the bullet at it’s original position in the code. 
+First create a boolean called, bulletShow. Then in the event.key if statement for the spacebar, we check is the bullet is showing, if it’s not we change the value of bulletShow to true. To draw the bullet on the screen, we go to where the screen.blit() for the bullet is and condition it so that it only darws when bulletShow is true:</p>
+<pre><code class="language-python">bulletShow = False
+#...
+if event.key == pygame.K_SPACE:
+	if bulletShow is False:
+		bulletShow = True
+
+#...
+if bulletShow is True:
+	screen.blit(bulletimg, (bulletX, bulletY))
+</code></pre>
+<p>Now run the code. It works! Now the fun part, to shoot it.</p>
+<p>To shoot the bullet, when the spacebar is pressed down, the bullet should move positions upward i.e in the y-axis. We can do that by adding -1 to the bulletY position when the spacebar has been pressed. But instead of doing that in the spacebar if-statement, we’ll do that in the if-statement for drawing the bullet. </p>
+<blockquote>
+<p>Remember that the Y-axis in pygame starts from the top to the bottom, 0 to end of screen</p>
+</blockquote>
+<pre><code class="language-python">if bulletShow is True:
+	screen.blit(bulletimg, (bulletX, bulletY))
+	bulletY-=5
+</code></pre>
+<p>When the bullet reaches the 0 co-ordinate on the y-axis, it should reset to the original position on the bullet. We do this by having another if statement above the bullet blit method.</p>
+<pre><code class="language-python">if bulletY&lt;=0:
+	bulletY=490
+</code></pre>
+<p>That would make it go back to it’s position on the player. Remember if the player is moving on the x-axis, the bullets x-position would still be the same and won’t be on the player/ship. This would be fixed soon.</p>
+<p>When you run the code, the bullet keeps moving and respawining, even if you have stopped pressing the spacebar. To fix this, we change <code>bulletShow</code> to be <code>False</code>.</p>
+<pre><code class="language-python">if bulletY&lt;=0:
+	bulletY=490
+	bulletShow = False
+</code></pre>
+<p>If you have been moving your player on the x-axis, you’ll notice that the bullet doesn’t follow your player around, to fix that, we equate the x-position of the bullet to that of the players. We do this in the key event for the spacebar. If we do this, the bullet will respwan at the ship/player x-co-ordinate, though it’ll be blocked by the player sprite. To fix this, we add 16 to bulletX, this is because the distance between the x-position of the player and the x-position of the bullet is 16.</p>
+<pre><code class="language-python">if event.key == pygame.K_SPACE:
+	if bulletShow is False:
+		bulletShow = True
+		bulletX = playerX + 16
+</code></pre>
+<h4 id="code-recap-5"><a class="header" href="#code-recap-5">CODE RECAP 5</a></h4>
+<pre><code class="language-python">import pygame
+import random
+
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+background = pygame.image.load('bg.png')
+playerimg = pygame.image.load('arcade.png')
+enemyimg = pygame.image.load('enemy.png')
+bulletimg = pygame.image.load(&quot;bullet.png&quot;)
+
+playerX = 370
+playerY = 480
+
+bulletX=386
+bulletY=489
+
+enemyX=random.randint(0, 736)
+enemyY=random.randint(30, 150)
+enemyspeedX=1
+enemyspeedY=40
+
+bulletShow = False
+
+running = True
+while running:
+	screen.blit(background, (0, 0))
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_LEFT:
+				changeX = -5
+			if event.key == pygame.K_RIGHT:
+				changex = 5
+			if event.key == pygame.K_SPACE:
+				if bulletShow is False:
+					bulletShow = True
+					bulletX = playerX+16
+		if event.type == pygame.KEYUP:
+			changex = 0
+	playerX += changeX
+	if playerX&lt;=0:
+		playerX=0
+	elif playerX&gt;=736:
+		playerX=736
+
+	enemyX+=enemyspeedX
+	if enemyX&lt;=0:
+		enemyspeedX=1
+		enemY+=40
+	if enemyY&gt;=736:
+		enemyspeedX=-1
+		enemyY+=enemyspeed
+
+	screen.blit(playerimg, (playerX, playerY))
+	
+	if bulletY&lt;=0:
+		bulletY=490
+		bulletShow=False
+	if bulletShow is True:
+		screen.blit(bulletimg, (bulletX, bulletY))
+		bulletY-=5
+
+	screen.blit(enemyimg, (enemyX, enemyY))
+	pygame.display.update()
+</code></pre>
+<h3 id="destroying-the-enemy"><a class="header" href="#destroying-the-enemy">Destroying The Enemy</a></h3>
+<p>It’s time to DESTROY the enemy. When the bullet collides with the enemy, the enemy should be destroyed. To do that, we need to know the distance between them. We’re going to use the formula used commonly in math to find the distance between two co-ordinates</p>
+<p><img src="Distance.png" alt="Formula" /></p>
+<p>To use this formula, we must first import math to the code by using <code>import math</code> . This will help us to use square root and square easily. The result will be svaed into a variable called distance. Write this code before the rest of the <code>bulletY&lt;=0</code> line.</p>
+<pre><code class="language-python">distance = math.sqrt(math.pow((bulletX-enemY),2) + math.pow((bulletY-enemyY),2)
+</code></pre>
+<p>To check whether or not the bullet has collided with the enemy, we use an if statement.</p>
+<pre><code class="language-python">if distance&lt;27:
+	bulletY=489
+	bulletShow = False
+	enemyX=random.randint(0, 736)
+	enemyY=random.randint(30, 150)
+</code></pre>
+<p>The code above shows that, when the distance between the bullet and the enemy is 27 (you can use any number asides 27, this was what worked for me), </p>
+<ol>
+<li>reset the bulletY position back to it’s original position</li>
+<li>Bullet should not be shown</li>
+<li>Regenerate a random position for the enemy to spawn in</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Space/Enemies.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Space/Scoring.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Space/Enemies.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Space/Scoring.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

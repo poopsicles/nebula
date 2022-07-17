@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Implementing the Player - Nebula: The Definitive Pygame Course</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started with Python</li><li class="chapter-item expanded "><a href="../Python/Variables.html"><strong aria-hidden="true">2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../Python/Strings.html"><strong aria-hidden="true">3.</strong> Strings</a></li><li class="chapter-item expanded "><a href="../Python/Functions.html"><strong aria-hidden="true">4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../Python/Logic.html"><strong aria-hidden="true">5.</strong> Logic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/Conditionals.html"><strong aria-hidden="true">5.1.</strong> Conditionals</a></li><li class="chapter-item expanded "><a href="../Python/Loops.html"><strong aria-hidden="true">5.2.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../Python/Lists-I.html"><strong aria-hidden="true">5.3.</strong> Accessing Lists</a></li><li class="chapter-item expanded "><a href="../Python/Lists-II.html"><strong aria-hidden="true">5.4.</strong> List Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Dictionaries.html"><strong aria-hidden="true">6.</strong> Dictionaries</a></li><li class="chapter-item expanded "><a href="../Python/OOP.html"><strong aria-hidden="true">7.</strong> Object-Oriented Programming</a></li><li class="chapter-item expanded affix "><li class="part-title">Working with Pygame</li><li class="chapter-item expanded "><a href="../Pygame/Pygame-I.html"><strong aria-hidden="true">8.</strong> Introduction to Pygame</a></li><li class="chapter-item expanded "><a href="../Pygame/Pygame-II.html"><strong aria-hidden="true">9.</strong> Doing more with Pygame</a></li><li class="chapter-item expanded affix "><li class="part-title">Real-World Examples</li><li class="chapter-item expanded "><a href="../Pong/Intro.html"><strong aria-hidden="true">10.</strong> Pong</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Pong/Player.html"><strong aria-hidden="true">10.1.</strong> The Player Class</a></li><li class="chapter-item expanded "><a href="../Pong/Ball.html"><strong aria-hidden="true">10.2.</strong> The Ball Class</a></li><li class="chapter-item expanded "><a href="../Pong/Score.html"><strong aria-hidden="true">10.3.</strong> Showing Information</a></li><li class="chapter-item expanded "><a href="../Pong/Loop.html"><strong aria-hidden="true">10.4.</strong> Putting it all together</a></li><li class="chapter-item expanded "><a href="../Pong/Final.html"><strong aria-hidden="true">10.5.</strong> Final Code</a></li></ol></li><li class="chapter-item expanded "><a href="../Space/Intro.html"><strong aria-hidden="true">11.</strong> Space Invaders</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Space/Player.html" class="active"><strong aria-hidden="true">11.1.</strong> Implementing the Player</a></li><li class="chapter-item expanded "><a href="../Space/Enemies.html"><strong aria-hidden="true">11.2.</strong> Adding Enemies</a></li><li class="chapter-item expanded "><a href="../Space/Bullets.html"><strong aria-hidden="true">11.3.</strong> Bullets and Shooting</a></li><li class="chapter-item expanded "><a href="../Space/Scoring.html"><strong aria-hidden="true">11.4.</strong> Adding Scoring</a></li><li class="chapter-item expanded "><a href="../Space/More.html"><strong aria-hidden="true">11.5.</strong> Adding More Enemies</a></li><li class="chapter-item expanded "><a href="../Space/Finish.html"><strong aria-hidden="true">11.6.</strong> Finishing Touches</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Nebula: The Definitive Pygame Course</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="player"><a class="header" href="#player"><strong>Player</strong></a></h1>
+<h3 id="creating-the-player"><a class="header" href="#creating-the-player"><strong>Creating The Player</strong></a></h3>
+<p>To create the player, we create the players sprite first (Images are also known as sprites). To do that, we use the image.load() function we used to add the background image to the code. You can download the image sprite from the link or use your own sprite/image. Follow the steps to make the background image, except in your code, the name of the file should be the name of your player filename equate the whole function to a variable called ‘<code>playerimg</code>’</p>
+<pre><code class="language-python">playerimg = pygame.load(‘player.png’)
+</code></pre>
+<p>Then to draw the player image/sprite on the screen, use the screen.blit() method. The position this time is (370, 480). I have already tested this position, but feel free to change it to what is best for you</p>
+<pre><code class="language-python">screen.blit(playerimg, (370, 480)
+</code></pre>
+<p>This code should be after the line of code for drawing the background. This is because the background has to be drawn before the player is drawn so the player would be onto of the background and not be hidden.</p>
+<p>We want to save the player position to a variable, this allows the movement on the screen to be easier. The player position can easily be changed at any point in time within the code.</p>
+<p>The co-ordinates on the blit() method are 370 on the x-axis and 480 on the y-axis, so let’s use it.</p>
+<pre><code class="language-python">playerX = 370
+playerY = 480
+...
+
+screen.blit(playerimg, (playerX, playerY))
+</code></pre>
+<h4 id="code-recap-1"><a class="header" href="#code-recap-1">CODE RECAP 1</a></h4>
+<p>Your overall code should look like this:</p>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+background = pygame.image.load('bg.png')
+playerimg = pygame.image.load('arcade.png')
+
+playerX = 370
+playerY = 480
+
+running = True
+while running:
+	screen.blit(background, (0, 0))
+	for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.blit(playerimg, (playerX, playerY))
+    pygame.display.update()
+</code></pre>
+<h3 id="moving-the-player"><a class="header" href="#moving-the-player">Moving The Player</a></h3>
+<p>To  move the player, we’re going to create a variable to account as the speed of the player, or how fast it’s moving across the screen.
+The player only moves on the x-axis, so only the x-axis should be changed. The variable name for the change would be called <code>changeX</code> and should be = 0. This is not the actual value of the player speed, we’re just initializing the variable.</p>
+<pre><code class="language-python">...
+playerX = 370
+playerY = 480
+changeX = 0
+</code></pre>
+<p>The actual use of the variable <code>changeX</code> would be in the while loop.
+In order for the player to move, the user would have to press the keyboard to make the player go left or right.
+To do this, a for loop for the left arrow key and right arrow keys would be created.</p>
+<pre><code class="language-python">for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_LEFT:
+				changeX = -5
+			if event.key == pygame.K_RIGHT:
+				changex = 5
+playerX += changeX
+</code></pre>
+<p>We already know the first 3 lines. Let’s break down the next lines of code.</p>
+<pre><code class="language-python">if event.type == pygame.KEYDOWN
+</code></pre>
+<p>This code is used to get the event in which a user is pressing the keyboard down. The code says ‘If a key is pressed down, then…’
+The next if_statements are to check which keys are being pressed down.</p>
+<pre><code class="language-python">if event.key == pygame.K_LEFT:
+	changeX= -5
+</code></pre>
+<p>This part of the code checks to see if the left arrow key is being pressed. If it is, <code>changeX</code> would be equal to -5, as the player is moving negatively on the x-axis with a speed of 5.</p>
+<pre><code class="language-python">if event.key == pygame.K_RIGHT:
+	changeX = 5
+</code></pre>
+<p>This is similar to the left arrow key code, except when the player presses the right arrow key, the player moves in the positive x-axis with a speed of 5.</p>
+<pre><code class="language-python">playerX+=changeX
+</code></pre>
+<p>This code updates the position of the player.</p>
+<p>At this point, if you run the code and press either the left or right arrow key, the player doesn’t stop moving even when you stop pressing the keys. To stop moving the player when the keys are not being pressed down, we use the following code:</p>
+<pre><code class="language-python">for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_LEFT:
+				changeX = -5
+			if event.key == pygame.K_RIGHT:
+				changex = 5
+		#updated part of code
+		if event.type == pygame.KEYUP:
+			changex = 0
+playerX += changeX
+</code></pre>
+<p>The code checks to see if the key that has been pressed is now no longer being pressed or the key has been released, then the speed or <code>changeX</code> is equal to 0.</p>
+<h4 id="code-recap-2"><a class="header" href="#code-recap-2">CODE RECAP 2</a></h4>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+background = pygame.image.load('bg.png')
+playerimg = pygame.image.load('arcade.png')
+
+playerX = 370
+playerY = 480
+
+running = True
+while running:
+	screen.blit(background, (0, 0))
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_LEFT:
+				changeX = -5
+			if event.key == pygame.K_RIGHT:
+				changex = 5
+		if event.type == pygame.KEYUP:
+			changex = 0
+	playerX += changeX
+	screen.blit(playerimg, (playerX, playerY))
+	pygame.display.update()
+</code></pre>
+<h3 id="player-collision-with-screen"><a class="header" href="#player-collision-with-screen">Player Collision With Screen</a></h3>
+<p>When the player is being moved, we don’t want it going through the borders of the screen. We add a collision detection code. First for detecting when the player collides with the left side of the screen.
+Write this code after the  <code>playerX+=changeX</code> line</p>
+<pre><code class="language-python">if playerX&lt;=0:
+	playerX=0
+</code></pre>
+<p>Now if the player is moved to the edge of the left side of the screen or it’s x position is 0, the player can’t move beyond this point because if it tries to, it’s position will remain 0.
+Add this to your code and try to move to the left side of the screen.</p>
+<p>For the right side, depending on the width of your game screen, we’ll use that first to create a collision for the right side. The code is similar to the previous one, but change ‘<code>0</code>’ to ‘<code>800</code>’ amd it’s not less than, it’s greater than as we don’t want to move <strong>beyond</strong> the screen width.</p>
+<pre><code class="language-python">if playerX&gt;=800:
+	playerX=800
+</code></pre>
+<p>If we run this code, you would observe that the player can still move beyond the borders of the screen, this is because the utmost right side, or the beginning part, of the player sprite is where the screen starts to draw the player from. 
+It may not make sense now, but let me show the code change:</p>
+<pre><code class="language-python">elif playerX&gt;=736:
+	playerX=736
+</code></pre>
+<p>The new limit is 736. This is because the size of the sprite from right to left is 64 pixels. The collisions are detected by the right side of the player sprite, which is 64 pixels away from the left side. If the left side of the player sprite and the screen border collide, the right side of the player would be 64 pixels away from the screen border, because the left side is at the same position as the screen border. 
+Therefore, the position of the playerX, which is the right part of the player sprite, would have to be 736 (ScreenWidth minus PlayerSize) if the left side is to be aligned/collide with the screen border, which is why the limit is 736 (800-64).</p>
+<p>Feel free to search the web if this explanation wasn’t clear enough.</p>
+<p>Now run the code and see if it works.</p>
+<blockquote>
+<p>N.B: The limit of the left side of the screen depends on the size of your screen and the size of your sprite/image</p>
+</blockquote>
+<h4 id="code-recap-3"><a class="header" href="#code-recap-3">CODE RECAP 3</a></h4>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((800, 600))
+background = pygame.image.load('bg.png')
+playerimg = pygame.image.load('arcade.png')
+
+playerX = 370
+playerY = 480
+
+running = True
+while running:
+	screen.blit(background, (0, 0))
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_LEFT:
+				changeX = -5
+			if event.key == pygame.K_RIGHT:
+				changex = 5
+		if event.type == pygame.KEYUP:
+			changex = 0
+	playerX += changeX
+	if playerX&lt;=0:
+		playerX=0
+	elif playerX&gt;=736:
+		playerX=736
+
+	screen.blit(playerimg, (playerX, playerY))
+	pygame.display.update()
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Space/Intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Space/Enemies.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Space/Intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Space/Enemies.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
