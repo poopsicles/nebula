@@ -6,7 +6,7 @@ This product was created with the use of ~~child~~ (well technically, since none
 
 Well the point is, we were *coerced* (well we had good intentions but those faded away once we saw the sheer magnitude of the thing) into doing the thing with exams ongoing and with only a week to like, do the thing so yeah...enjoy!
 
-It was originally going to be a [Qt for Python](https://doc.qt.io/qtforpython/) application, then it became a [Binder notebook](https://jupyter.org/binder), and then some of us knew Rust...so we settled on [mdBook](https://rust-lang.github.io/mdBook/)
+It was originally going to be a [Qt for Python](https://doc.qt.io/qtforpython/) application, then it became a [Binder notebook](https://jupyter.org/binder), and then some of us knew Rust...so we settled on [mdBook](https://rust-lang.github.io/mdBook/).
 
 The important thing is that it...works, right?
 
