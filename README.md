@@ -10,7 +10,7 @@ It was originally going to be a [Qt for Python](https://doc.qt.io/qtforpython/) 
 
 The important thing is that it...works, right?
 
-> Credits to Anthonia, Billie, Daniella, Mikayla, Josephina, and of course...moi 🤪.
+> Credits to Anthony, Billie, [Daniel](https://github.com/Ch1n3du), [Michael](https://github.com/mikky-j), [Joseph](https://github.com/joecode77), and of course...moi 🤪.
 
 ## Stop! No more! How can I experience this wonder?
 
